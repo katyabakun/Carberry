@@ -17,27 +17,29 @@ import UIKit
 
 class ConnectionViewController: UIViewController, NSStreamDelegate {
     let addr = "192.168.1.1"
-    let port = 9888
+    let port = 9988
+    
+    var connectButton: UIButton!
     
     //Network variables
-    
     var inStream : NSInputStream?
     var outStream: NSOutputStream?
-    @IBOutlet weak var welcomeLabel: UILabel!
-    @IBAction func connectButtton(sender: UIButton) {
-        NetworkEnable()
-        
-    }
+    @IBOutlet weak var switchConnection: UISwitch!
     
-    
-    @IBOutlet weak var labelConnect: UILabel!
-        //Data received
+    //Data received
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     
-
+    
+    
+    /*@IBAction func buttonKolko(sender: AnyObject){
+    sleep(2)
+    
+    
+    }*/
+    
     @IBAction func buttonRight(sender: AnyObject) {
         btnRightPressed()
-           }
+    }
     @IBAction func buttonSub(sender: AnyObject) {
         btnSubPressed()
     }
@@ -58,10 +60,11 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
     @IBAction func buttonOff(sender: AnyObject) {
         btnOffPressed()
     }
+    @IBOutlet weak var labelConnect: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //buttonSetup()
-      
+        buttonSetup()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {
@@ -69,24 +72,50 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
         // Dispose of any resources that can be recreated.
         
     }
-   /* @IBOutlet weak var switcher: UISwitch!
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "push")
         {
-            var state:String
-                if (switcher.on)
-                {
-                  state = "ON"
+            var state_connection:String?
+            var inStream_n : NSInputStream?
+            var outStream_n: NSOutputStream?
+
+        if (labelConnect.text == "Connected to server")
+        {
+        state_connection = "ON"
+        inStream_n = inStream
+        outStream_n = outStream
+        }
+            else
+        {
+        state_connection = "OFF"
+        }
+            (segue.destinationViewController as! ViewController).data2 = state_connection
+            (segue.destinationViewController as! ViewController).outStream2 = outStream_n
+            (segue.destinationViewController as! ViewController).inStream2 = inStream_n
+        }
+        else         {
+            var state_connection2:String?
+            var inStream_m : NSInputStream?
+            var outStream_m: NSOutputStream?
+            if(labelConnect.text == "Connected to server")
+            {
+                state_connection2 = "ON"
+                inStream_m = inStream
+                outStream_m = outStream
             }
             else
-          {
-            state = "OFF"
+            {
+                state_connection2 = "OFF"
             }
-            (segue.destinationViewController as! ViewController).data2 = state
-
-    }*/
-    /*func buttonSetup (){
-        connectButton = UIButton(frame: CGRectMake(20, 50, 300, 150))
+            (segue.destinationViewController as! SecondViewController).outStream3 = outStream_m
+            (segue.destinationViewController as! SecondViewController).inStream3 = inStream_m
+            (segue.destinationViewController as! SecondViewController).data3 = state_connection2
+            
+        }
+    }
+    
+    func buttonSetup (){
+        connectButton = UIButton(frame: CGRectMake(20, 50, 300, 130))
         connectButton.setTitle("Connect to server", forState: UIControlState.Normal)
         connectButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         connectButton.setTitleColor(UIColor.cyanColor(), forState: UIControlState.Highlighted)
@@ -97,16 +126,14 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
         //buttonAdd.addTarget(self, action: "btnAddPressed", forControlEvents: UIControlEvents.TouchUpInside)
         //buttonSub.addTarget(self, action: "btnSubPressed", forControlEvents: UIControlEvents.TouchUpInside)
     }
-*/
-    func btnConnectPressed() {
+    func btnConnectPressed(sender: UIButton) {
         NetworkEnable()
         
-        //connectButton.alpha = 0.3
-        //connectButton.enabled = false
-        //connectButtton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        connectButton.alpha = 0.3
+        connectButton.enabled = false
+        connectButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
         //repeatSignal()
     }
-
     func btnLeftPressed(){
         let data: NSData = "LEFT".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
@@ -177,8 +204,8 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
             outStream?.close()
             print("Stop outStream currentRunLoop")
             outStream?.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
-           // connectButton.alpha = 1
-           // connectButton.enabled = true
+            connectButton.alpha = 1
+            connectButton.enabled = true
         case NSStreamEvent.ErrorOccurred:
             print("ErrorOccurred")
             
@@ -187,8 +214,8 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
             outStream?.close()
             outStream?.removeFromRunLoop(NSRunLoop.currentRunLoop(), forMode: NSDefaultRunLoopMode)
             labelConnect.text = "Failed to connect to server"
-           // connectButton.alpha = 1
-           //connectButton.enabled = true
+            connectButton.alpha = 1
+            connectButton.enabled = true
             
         case NSStreamEvent.HasBytesAvailable:
             print("HasBytesAvailable")
@@ -202,18 +229,17 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
             print("HasSpaceAvailable")
         case NSStreamEvent.None:
             print("None")
-        case NSStreamEvent.OpenCompleted:
+        case  NSStreamEvent.OpenCompleted:
             print("OpenCompleted")
-           
-           labelConnect.text = "Connected to server"
+            labelConnect.text = "Connected to server"
             
         default:
             print("Unknown")
         }
     }
     
-}
     
+}
 
 
 

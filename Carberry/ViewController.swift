@@ -21,61 +21,37 @@ class ViewController: UIViewController {
     //Data received
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     var data2:String?
-
-    
-    var data: String?
-    
-    @IBAction func buttonAdd(sender: AnyObject) {
-        btnAddPressed()
-    }
-
-    @IBAction func buttonSub(sender: AnyObject) {
-        btnSubPressed()
-    }
-    
-    @IBAction func buttonRight(sender: AnyObject) {
-    btnRightPressed()
-    }
+    var currentValue: Int?
     
     @IBAction func buttonLeft(sender: AnyObject) {
-        btnLeftPressed()
+    btnLeftPressed()
     }
+        @IBAction func buttonOff(sender: AnyObject) {
+        
+        btnOffPressed()
+    }
+    @IBAction func buttonRight(sender: AnyObject) {
+        btnRightPressed()
+    }
+    @IBAction func buttonOn(sender: AnyObject) {
+        btnOnPressed()
+    }
+    var data: String?
+    
+   
     @IBOutlet weak var sliderSpeed: UISlider!
     
     @IBAction func speedChanged(sender: UISlider) {
-        var currentValue = Int(sender.value)
         
         labelSpeed.text = "\(currentValue)"
     }
     @IBOutlet weak var labelSpeed: UILabel!
    
-  /*  @IBAction func buttonRight(sender: AnyObject) {
-        btnRightPressed()
-    }
-    @IBAction func buttonSub(sender: AnyObject) {
-        btnSubPressed()
-    }
-    
-    @IBAction func buttonAdd(sender: AnyObject) {
-        btnAddPressed()
-    }
-    @IBAction func buttonOsemka(sender: AnyObject) {
-        
-    }
-    @IBAction func buttonLeft(sender: AnyObject) {
-        btnLeftPressed()
-    }
-    @IBAction func buttonOn(sender: AnyObject) {
-        btnOnPressed()
-    }
-    
-    @IBAction func buttonOff(sender: AnyObject) {
-        btnOffPressed()
-    }
-*/
+ 
     func btnLeftPressed(){
         let data: NSData = "LEFT".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+        
     }
     func btnRightPressed(){
         let data: NSData = "RIGHT".dataUsingEncoding(NSUTF8StringEncoding)!
@@ -85,10 +61,12 @@ class ViewController: UIViewController {
     func btnOnPressed( ){
         let data: NSData = "ON".dataUsingEncoding(NSUTF8StringEncoding)!
        outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+        currentValue = currentValue!+3
     }
     func btnOffPressed (){
         let data: NSData = "OFF".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+        currentValue = currentValue!-3
     }
     func btnAddPressed(){
         let data: NSData = "ADD".dataUsingEncoding(NSUTF8StringEncoding)!
@@ -106,6 +84,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         if let label = data2{
         labelState.text = data2
+        
         }
     }
 
