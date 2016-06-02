@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     //Data received
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     var data2:String?
-    var currentValue: Int?
+    var currentValue: Int? = 123
+    
     
     @IBAction func buttonLeft(sender: AnyObject) {
     btnLeftPressed()
@@ -62,11 +63,15 @@ class ViewController: UIViewController {
         let data: NSData = "ON".dataUsingEncoding(NSUTF8StringEncoding)!
        outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
         currentValue = currentValue!+3
+        labelSpeed.text = "\(currentValue)"
+        sliderSpeed.value = Float(currentValue!)
     }
     func btnOffPressed (){
         let data: NSData = "OFF".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
         currentValue = currentValue!-3
+        labelSpeed.text = "\(currentValue)"
+        //sliderSpeed.value = Float(currentValue!)
     }
     func btnAddPressed(){
         let data: NSData = "ADD".dataUsingEncoding(NSUTF8StringEncoding)!

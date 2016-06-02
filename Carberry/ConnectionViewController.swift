@@ -17,7 +17,7 @@ import UIKit
 
 class ConnectionViewController: UIViewController, NSStreamDelegate {
     let addr = "192.168.1.1"
-    let port = 9988
+    let port = 9888
     
     var connectButton: UIButton!
     
