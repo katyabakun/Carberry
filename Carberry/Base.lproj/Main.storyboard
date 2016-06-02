@@ -74,7 +74,7 @@
                                 <rect key="frame" x="136" y="347" width="48" height="48"/>
                                 <state key="normal" image="1462389032_Arrow_Retro_Down.png"/>
                                 <connections>
-                                    <action selector="buttonOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYM-g2-MB5"/>
+                                    <action selector="buttonOff:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sQ3-8u-iAG"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="124" minValue="123" maxValue="181" translatesAutoresizingMaskIntoConstraints="NO" id="d5m-gP-GmD">

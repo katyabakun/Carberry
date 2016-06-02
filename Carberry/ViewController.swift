@@ -25,10 +25,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonLeft(sender: AnyObject) {
+        
     btnLeftPressed()
     }
-        @IBAction func buttonOff(sender: AnyObject) {
-        
+    @IBAction func buttonOff(sender: AnyObject) {
         btnOffPressed()
     }
     @IBAction func buttonRight(sender: AnyObject) {
@@ -48,7 +48,29 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var labelSpeed: UILabel!
    
- 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "push2"){
+        
+            var state_connection2:String?
+            var inStream_m : NSInputStream?
+            var outStream_m: NSOutputStream?
+            if(labelState.text == "ON")
+            {
+                state_connection2 = "ON"
+                inStream_m = inStream2
+                outStream_m = outStream2
+            }
+            else
+            {
+                state_connection2 = "OFF"
+            }
+            (segue.destinationViewController as! SecondViewController).outStream3 = outStream_m
+            (segue.destinationViewController as! SecondViewController).inStream3 = inStream_m
+            (segue.destinationViewController as! SecondViewController).data3 = state_connection2
+            
+        }
+
+    }
     func btnLeftPressed(){
         let data: NSData = "LEFT".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
@@ -69,9 +91,6 @@ class ViewController: UIViewController {
     func btnOffPressed (){
         let data: NSData = "OFF".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
-        currentValue = currentValue!-3
-        labelSpeed.text = "\(currentValue)"
-        //sliderSpeed.value = Float(currentValue!)
     }
     func btnAddPressed(){
         let data: NSData = "ADD".dataUsingEncoding(NSUTF8StringEncoding)!

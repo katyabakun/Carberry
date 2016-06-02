@@ -17,7 +17,7 @@ import UIKit
 
 class ConnectionViewController: UIViewController, NSStreamDelegate {
     let addr = "192.168.1.1"
-    let port = 9888
+    let port = 9988
     
     var connectButton: UIButton!
     
@@ -93,25 +93,7 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
             (segue.destinationViewController as! ViewController).outStream2 = outStream_n
             (segue.destinationViewController as! ViewController).inStream2 = inStream_n
         }
-        else         {
-            var state_connection2:String?
-            var inStream_m : NSInputStream?
-            var outStream_m: NSOutputStream?
-            if(labelConnect.text == "Connected to server")
-            {
-                state_connection2 = "ON"
-                inStream_m = inStream
-                outStream_m = outStream
-            }
-            else
-            {
-                state_connection2 = "OFF"
-            }
-            (segue.destinationViewController as! SecondViewController).outStream3 = outStream_m
-            (segue.destinationViewController as! SecondViewController).inStream3 = inStream_m
-            (segue.destinationViewController as! SecondViewController).data3 = state_connection2
-            
-        }
+        
     }
     
     func buttonSetup (){
