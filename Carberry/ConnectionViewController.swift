@@ -97,7 +97,8 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
     }
     
     func buttonSetup (){
-        connectButton = UIButton(frame: CGRectMake(20, 50, 300, 130))
+        connectButton = UIButton(frame: CGRectMake(50, 70, 300, 400))
+      
         connectButton.setTitle("Connect to server", forState: UIControlState.Normal)
         connectButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         connectButton.setTitleColor(UIColor.cyanColor(), forState: UIControlState.Highlighted)
@@ -114,6 +115,9 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
         connectButton.alpha = 0.3
         connectButton.enabled = false
         connectButton.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        let data: NSData = "CONNECTED".dataUsingEncoding(NSUTF8StringEncoding)!
+        outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+
         //repeatSignal()
     }
     func btnLeftPressed(){
@@ -141,10 +145,10 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
         let data: NSData = "SUB".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
     }
-    /*func delay(delay:Double, closure:()->()) {
+    func delay(delay:Double, closure:()->()) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(delay * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), closure)
     }
-    func repeatSignal(){
+   /* func repeatSignal(){
     let data : NSData = "REPEAT".dataUsingEncoding(NSUTF8StringEncoding)!
     
     repeat{
@@ -161,6 +165,7 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
     
     func NetworkEnable() {
         
+        //delay(5.0, closure: <#T##() -> ()#>)
         print("NetworkEnable")
         NSStream.getStreamsToHostWithName(addr, port: port, inputStream: &inStream, outputStream: &outStream)
         
@@ -213,6 +218,7 @@ class ConnectionViewController: UIViewController, NSStreamDelegate {
             print("None")
         case  NSStreamEvent.OpenCompleted:
             print("OpenCompleted")
+            
             labelConnect.text = "Connected to server"
             
         default:

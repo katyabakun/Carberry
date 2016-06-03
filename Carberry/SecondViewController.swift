@@ -19,12 +19,16 @@ class SecondViewController: UIViewController {
     var outStream3: NSOutputStream?
     
     //Data received
+    @IBOutlet weak var image_adhoc_connection: UIImageView!
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     
     var data: String?
     var data3:String?
     @IBOutlet weak var labelStateConnection: UILabel!
     
+    @IBAction func buttonProstaLinia(sender: AnyObject) {
+        btnLiniaProstaPressed()
+    }
     
     @IBAction func buttonOsemka(sender: AnyObject) {
         btnOsemkaPressed()
@@ -33,9 +37,7 @@ class SecondViewController: UIViewController {
         btnKolkoPressed()
     }
     
-    @IBAction func buttonLinia(sender: AnyObject) {
-        btnLiniaProstaPressed()
-    }
+  
     
     
     @IBAction func buttonTokyoDrift(sender: AnyObject) {
@@ -64,10 +66,15 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let label = data3 {
-        labelStateConnection.text = data3
+        let label = data3
+        if (label == "ON")
+        {
+            image_adhoc_connection.image = UIImage(named: "adhoc_id.png")
         }
-    }
+        else
+        {
+            image_adhoc_connection.image = UIImage(named:"no_signal.png")
+        }    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

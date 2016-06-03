@@ -17,12 +17,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelState: UILabel!
     var inStream2 : NSInputStream?
     var outStream2: NSOutputStream?
-
+    
     //Data received
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     var data2:String?
+    @IBOutlet weak var image_adhoc_connection: UIImageView!
     var currentValue: Int? = 123
     
+    
+    @IBOutlet weak var labelConnectionState: UILabel!
     
     @IBAction func buttonLeft(sender: AnyObject) {
         
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
             var state_connection2:String?
             var inStream_m : NSInputStream?
             var outStream_m: NSOutputStream?
-            if(labelState.text == "ON")
+            if( labelConnectionState.text == "ON")
             {
                 state_connection2 = "ON"
                 inStream_m = inStream2
@@ -106,10 +109,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let label = data2{
+        /*if let label = data2{
         labelState.text = data2
         
+        }*/
+        let label = data2
+        if (label == "ON")
+        {
+            labelConnectionState.text = "ON"
+        image_adhoc_connection.image = UIImage(named: "adhoc_id.png")
+            
         }
+        else
+        {
+            labelConnectionState.text = "OFF"
+        image_adhoc_connection.image = UIImage(named:"no_signal.png")
+                    }
     }
 
     override func didReceiveMemoryWarning() {
