@@ -11,10 +11,24 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    var window: UIWindow? = UIWindow(frame: UIScreen.mainScreen().bounds)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let tabBar = UITabBarController()
+        
+        
+        let mainVC = MainMenuViewController()
+        let actionVC = ActionViewController()
+        let settingsVC = SettingViewController()
+        let navMainVC = UINavigationController(rootViewController: mainVC)
+        let navActionVC = UINavigationController(rootViewController: actionVC)
+        let navSettingsVC = UINavigationController(rootViewController: settingsVC)
+        navMainVC.title = "Main"
+        let controllers = [navMainVC,navActionVC,navSettingsVC]
+        
+        tabBar.viewControllers = controllers
+        window?.rootViewController = tabBar
+        window!.makeKeyAndVisible()
         // Override point for customization after application launch.
         return true
     }
