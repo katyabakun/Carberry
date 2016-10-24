@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06FE141E1DB17B0B00BCC9E8"
-               BuildableName = "Carberry.app"
-               BlueprintName = "Carberry"
-               ReferencedContainer = "container:Carberry.xcodeproj">
+               BlueprintIdentifier = "54C96A10195063CD000CDD27"
+               BuildableName = "Cartography.framework"
+               BlueprintName = "Cartography-iOS"
+               ReferencedContainer = "container:Cartography.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,22 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "06FE14321DB17B0C00BCC9E8"
-               BuildableName = "CarberryTests.xctest"
-               BlueprintName = "CarberryTests"
-               ReferencedContainer = "container:Carberry.xcodeproj">
+               BlueprintIdentifier = "54C96A1B195063CD000CDD27"
+               BuildableName = "Cartography-iOS-Tests.xctest"
+               BlueprintName = "Cartography-iOS-Tests"
+               ReferencedContainer = "container:Cartography.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06FE141E1DB17B0B00BCC9E8"
-            BuildableName = "Carberry.app"
-            BlueprintName = "Carberry"
-            ReferencedContainer = "container:Carberry.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +52,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06FE141E1DB17B0B00BCC9E8"
-            BuildableName = "Carberry.app"
-            BlueprintName = "Carberry"
-            ReferencedContainer = "container:Carberry.xcodeproj">
+            BlueprintIdentifier = "54C96A10195063CD000CDD27"
+            BuildableName = "Cartography.framework"
+            BlueprintName = "Cartography-iOS"
+            ReferencedContainer = "container:Cartography.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +70,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "06FE141E1DB17B0B00BCC9E8"
-            BuildableName = "Carberry.app"
-            BlueprintName = "Carberry"
-            ReferencedContainer = "container:Carberry.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

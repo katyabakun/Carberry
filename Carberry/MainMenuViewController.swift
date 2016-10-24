@@ -19,49 +19,50 @@ class MainMenuViewController:BaseViewController<MainMenuView>,UINavigationBarDel
         self.tabBarItem = tabBarItem1        
         
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let rightBarItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(openConnectionVC(_:)))
+        let rightBarItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.action, target: self, action: #selector(openConnectionVC(_:)))
         
         self.navigationItem.rightBarButtonItem = rightBarItem
         self.navigationController?.navigationBar.topItem?.title = "Main menu"
        // self.navigationController?.pushViewController(ActionViewController(), animated: true)
       
     }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         // Create the navigation bar
-        self.navigationController?.navigationBar.hidden = false
-        self.tabBarController?.tabBar.hidden = false
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
-    func openConnectionVC(sender: UIBarButtonItem){
-        let x = UIScreen.mainScreen().bounds.width
-        let y = UIScreen.mainScreen().bounds.height
+    func openConnectionVC(_ sender: UIBarButtonItem){
+        let x = UIScreen.main.bounds.width
+        let y = UIScreen.main.bounds.height
         let conVC = ConnectionViewController()
-        conVC.modalTransitionStyle = .CoverVertical
-        conVC.modalPresentationStyle = .Popover
+        conVC.modalTransitionStyle = .coverVertical
+        conVC.modalPresentationStyle = .popover
         conVC.preferredContentSize = CGSize(width: x - 20, height: y/2)
         let popover:UIPopoverPresentationController = conVC.popoverPresentationController!
-        popover.permittedArrowDirections = .Up
+        popover.permittedArrowDirections = .up
         popover.sourceView = view
         popover.sourceRect = CGRect(origin: CGPoint(x: 0,y: 50), size: CGSize(width: view.bounds.width,height: 30))
         popover.delegate = self
-        self.presentViewController(conVC, animated: true, completion: nil)
+        self.present(conVC, animated: true, completion: nil)
         
     }
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return UIModalPresentationStyle.None
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
     }
     
-    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
         let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
-        let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(MainMenuViewController.dismiss))
+        let btnDone = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(MainMenuViewController.dismiss))
         navigationController.topViewController!.navigationItem.rightBarButtonItem = btnDone
         return navigationController
     }
-    
-    func dismiss() {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
 
 }

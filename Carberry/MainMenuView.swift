@@ -19,39 +19,39 @@ class MainMenuView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         setupViews()
         setupConstraints()
     }
     func setupViews(){
         backgraundView.image = UIImage(named: "Wall-5")
         backgraundView.sizeToFit()
-        backgraundView.backgroundColor = UIColor.lightGrayColor()
+        backgraundView.backgroundColor = UIColor.lightGray
         self.addSubview(backgraundView)
         
         let imageLeft = UIImage(named: "left")
-        leftButton.setImage(imageLeft, forState: .Normal)
-        leftButton.contentHorizontalAlignment = .Fill
-        leftButton.contentVerticalAlignment = .Fill
-        leftButton.imageView?.contentMode = .ScaleAspectFit
+        leftButton.setImage(imageLeft, for: UIControlState())
+        leftButton.contentHorizontalAlignment = .fill
+        leftButton.contentVerticalAlignment = .fill
+        leftButton.imageView?.contentMode = .scaleAspectFit
         self.addSubview(leftButton)
         
-        rightButton.setImage(UIImage(named: "right"), forState: .Normal)
-        rightButton.contentHorizontalAlignment = .Fill
-        rightButton.contentVerticalAlignment = .Fill
-        rightButton.imageView?.contentMode = .ScaleAspectFit
+        rightButton.setImage(UIImage(named: "right"), for: UIControlState())
+        rightButton.contentHorizontalAlignment = .fill
+        rightButton.contentVerticalAlignment = .fill
+        rightButton.imageView?.contentMode = .scaleAspectFit
         self.addSubview(rightButton)
         
-        speedUpButton.setImage(UIImage(named: "top"), forState: .Normal)
-        speedUpButton.contentHorizontalAlignment = .Fill
-        speedUpButton.contentVerticalAlignment = .Fill
-        speedUpButton.imageView?.contentMode = .ScaleAspectFit
+        speedUpButton.setImage(UIImage(named: "top"), for: UIControlState())
+        speedUpButton.contentHorizontalAlignment = .fill
+        speedUpButton.contentVerticalAlignment = .fill
+        speedUpButton.imageView?.contentMode = .scaleAspectFit
         self.addSubview(speedUpButton)
         
-        speedDownButton.setImage(UIImage(named: "bottom"), forState: .Normal)
-        speedDownButton.contentHorizontalAlignment = .Fill
-        speedDownButton.contentVerticalAlignment = .Fill
-        speedDownButton.imageView?.contentMode = .ScaleAspectFit
+        speedDownButton.setImage(UIImage(named: "bottom"), for: UIControlState())
+        speedDownButton.contentHorizontalAlignment = .fill
+        speedDownButton.contentVerticalAlignment = .fill
+        speedDownButton.imageView?.contentMode = .scaleAspectFit
         self.addSubview(speedDownButton)
         
         speedLabel1.text = "Speed:"

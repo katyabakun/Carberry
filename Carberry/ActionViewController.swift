@@ -10,11 +10,15 @@ import UIKit
 class ActionViewController: BaseViewController<ActionView> {
     override init(){
         super.init()
-        self.view.backgroundColor = UIColor.magentaColor()
+        self.view.backgroundColor = UIColor.magenta
         let tabBarItem1 = UITabBarItem(title: "", image: UIImage(named: "action"), tag: 1)
         tabBarItem1.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
         self.tabBarController?.tabBar.clipsToBounds = true
         self.tabBarItem = tabBarItem1
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     override func viewDidLoad(){
     }

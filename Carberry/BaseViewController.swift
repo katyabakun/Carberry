@@ -15,7 +15,7 @@ protocol DisplayPreferable {
 class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
     //    let lifeTimeDisposeBag = DisposeBag()
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -24,10 +24,14 @@ class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
         //        let view = TView(frame: UIScreen.mainScreen().bounds)
         //
         //        self.view = view
-        print("init in BaseViewController -> \(self.dynamicType)")
+        print("init in BaseViewController -> \(type(of: self))")
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return false
     }
     
@@ -36,7 +40,7 @@ class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
     }
     
     override func loadView() {
-        let view = TView(frame: UIScreen.mainScreen().bounds)
+        let view = TView(frame: UIScreen.main.bounds)
         
         self.view = view
     }
@@ -53,7 +57,7 @@ class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
     
     //MARK: deinit
     deinit {
-        print("deinit in BaseViewController -> \(self.dynamicType)")
+        print("deinit in BaseViewController -> \(type(of: self))")
     }
     
     // MARK: -  DisplayPreferable

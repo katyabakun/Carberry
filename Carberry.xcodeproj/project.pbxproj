@@ -12,6 +12,8 @@
 		060F71F11DB674D000A5B903 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71F01DB674D000A5B903 /* ActionView.swift */; };
 		060F71F31DB674E200A5B903 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71F21DB674E200A5B903 /* ActionViewController.swift */; };
 		060F71FD1DB6A10D00A5B903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71FC1DB6A10D00A5B903 /* Constants.swift */; };
+		068244E01DBEA7FB00C2CC32 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068244DF1DBEA7FB00C2CC32 /* Cartography.framework */; };
+		068244E11DBEA7FB00C2CC32 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 068244DF1DBEA7FB00C2CC32 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06944C3C1DB41AB60021DCA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C3B1DB41AB60021DCA4 /* BaseViewController.swift */; };
 		06944C411DB41CB80021DCA4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C401DB41CB80021DCA4 /* MainMenuViewController.swift */; };
 		06944C431DB41CC70021DCA4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C421DB41CC70021DCA4 /* MainMenuView.swift */; };
@@ -20,9 +22,6 @@
 		06E60C6E1DBABB46006F342C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06E60C6D1DBABB46006F342C /* Assets.xcassets */; };
 		06FE14231DB17B0C00BCC9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE14221DB17B0C00BCC9E8 /* AppDelegate.swift */; };
 		06FE142D1DB17B0C00BCC9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FE142B1DB17B0C00BCC9E8 /* LaunchScreen.storyboard */; };
-		06FE14481DB190AB00BCC9E8 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FE14471DB190AB00BCC9E8 /* Cartography.framework */; };
-		26F5880FEF2A7A40F59A8885 /* Pods_CarberryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128D5AD8123A303C3210B71D /* Pods_CarberryTests.framework */; };
-		6F61AFE43D954305946D2A87 /* Pods_Carberry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF00EAE66E33CD1972ABE2A /* Pods_Carberry.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +34,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		068244E21DBEA7FB00C2CC32 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				068244E11DBEA7FB00C2CC32 /* Cartography.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		060433BB1DB8E88100826ECD /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		060433BE1DB8E89400826ECD /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		060F71F01DB674D000A5B903 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = SOURCE_ROOT; };
 		060F71F21DB674E200A5B903 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		060F71FC1DB6A10D00A5B903 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		068244DF1DBEA7FB00C2CC32 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		06944C3B1DB41AB60021DCA4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		06944C401DB41CB80021DCA4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		06944C421DB41CC70021DCA4 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
@@ -52,13 +66,6 @@
 		06FE142C1DB17B0C00BCC9E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06FE142E1DB17B0C00BCC9E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06FE14331DB17B0C00BCC9E8 /* CarberryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarberryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06FE14471DB190AB00BCC9E8 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = "../../Library/Developer/Xcode/DerivedData/Carberry-dpxlwgxxaumafvfqccvpcjdmsmpr/Build/Products/Debug-iphonesimulator/Cartography/Cartography.framework"; sourceTree = "<group>"; };
-		128D5AD8123A303C3210B71D /* Pods_CarberryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarberryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E2B77EC0D6DE615F3184FA3 /* Pods-CarberryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarberryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarberryTests/Pods-CarberryTests.release.xcconfig"; sourceTree = "<group>"; };
-		39158BB220F48CA958B77442 /* Pods-Carberry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carberry.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carberry/Pods-Carberry.release.xcconfig"; sourceTree = "<group>"; };
-		7EF00EAE66E33CD1972ABE2A /* Pods_Carberry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carberry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9499231D9452EDC5F421E4BC /* Pods-Carberry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carberry.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carberry/Pods-Carberry.debug.xcconfig"; sourceTree = "<group>"; };
-		AD3972907CE43B999E271586 /* Pods-CarberryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarberryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarberryTests/Pods-CarberryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06FE14481DB190AB00BCC9E8 /* Cartography.framework in Frameworks */,
-				6F61AFE43D954305946D2A87 /* Pods_Carberry.framework in Frameworks */,
+				068244E01DBEA7FB00C2CC32 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26F5880FEF2A7A40F59A8885 /* Pods_CarberryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,10 +166,9 @@
 		06FE14161DB17B0B00BCC9E8 = {
 			isa = PBXGroup;
 			children = (
+				068244DF1DBEA7FB00C2CC32 /* Cartography.framework */,
 				06FE14211DB17B0C00BCC9E8 /* Carberry */,
 				06FE14201DB17B0C00BCC9E8 /* Products */,
-				80463186B6C8BD08BB4760DD /* Pods */,
-				E6A54D2D67332442EDEFA869 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,7 +186,6 @@
 			children = (
 				06FE14451DB181A400BCC9E8 /* Helpers */,
 				06FE14421DB1815500BCC9E8 /* Model */,
-				06FE14431DB1815D00BCC9E8 /* Views */,
 				06FE14441DB1816700BCC9E8 /* Controllers */,
 				06FE14461DB181BB00BCC9E8 /* Supporting Files */,
 			);
@@ -194,13 +197,6 @@
 			children = (
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		06FE14431DB1815D00BCC9E8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		06FE14441DB1816700BCC9E8 /* Controllers */ = {
@@ -234,27 +230,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		80463186B6C8BD08BB4760DD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9499231D9452EDC5F421E4BC /* Pods-Carberry.debug.xcconfig */,
-				39158BB220F48CA958B77442 /* Pods-Carberry.release.xcconfig */,
-				AD3972907CE43B999E271586 /* Pods-CarberryTests.debug.xcconfig */,
-				2E2B77EC0D6DE615F3184FA3 /* Pods-CarberryTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E6A54D2D67332442EDEFA869 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				06FE14471DB190AB00BCC9E8 /* Cartography.framework */,
-				7EF00EAE66E33CD1972ABE2A /* Pods_Carberry.framework */,
-				128D5AD8123A303C3210B71D /* Pods_CarberryTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,12 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06FE143C1DB17B0C00BCC9E8 /* Build configuration list for PBXNativeTarget "Carberry" */;
 			buildPhases = (
-				98855E4C79674B6FBC131203 /* [CP] Check Pods Manifest.lock */,
 				06FE141B1DB17B0B00BCC9E8 /* Sources */,
 				06FE141C1DB17B0B00BCC9E8 /* Frameworks */,
 				06FE141D1DB17B0B00BCC9E8 /* Resources */,
-				7439BC67A501019546FB9D9E /* [CP] Embed Pods Frameworks */,
-				227E0C5D99EB16182B9BBDDF /* [CP] Copy Pods Resources */,
+				068244E21DBEA7FB00C2CC32 /* Embed Frameworks */,
+				068244E31DBEA83500C2CC32 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -282,12 +256,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06FE143F1DB17B0C00BCC9E8 /* Build configuration list for PBXNativeTarget "CarberryTests" */;
 			buildPhases = (
-				CEF13D71ACEB6500BFF89037 /* [CP] Check Pods Manifest.lock */,
 				06FE142F1DB17B0C00BCC9E8 /* Sources */,
 				06FE14301DB17B0C00BCC9E8 /* Frameworks */,
 				06FE14311DB17B0C00BCC9E8 /* Resources */,
-				4A805358732907BBE27F29B2 /* [CP] Embed Pods Frameworks */,
-				7B312CE51C1EADFDB8145B42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,12 +277,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Katerina Bakunkaterinabakun";
 				TargetAttributes = {
 					06FE141E1DB17B0B00BCC9E8 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 7Z48AFUPSX;
+						DevelopmentTeam = 6AK2M88EQH;
+						LastSwiftMigration = 0800;
 					};
 					06FE14321DB17B0C00BCC9E8 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -358,95 +330,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		227E0C5D99EB16182B9BBDDF /* [CP] Copy Pods Resources */ = {
+		068244E31DBEA83500C2CC32 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
-			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Carberry/Pods-Carberry-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4A805358732907BBE27F29B2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarberryTests/Pods-CarberryTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7439BC67A501019546FB9D9E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Carberry/Pods-Carberry-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7B312CE51C1EADFDB8145B42 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarberryTests/Pods-CarberryTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		98855E4C79674B6FBC131203 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CEF13D71ACEB6500BFF89037 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -512,8 +408,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -557,8 +455,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -577,41 +477,51 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		06FE143D1DB17B0C00BCC9E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9499231D9452EDC5F421E4BC /* Pods-Carberry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AK2M88EQH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Carberry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = katerinabakun.Carberry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katerinabakun.Carberry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		06FE143E1DB17B0C00BCC9E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39158BB220F48CA958B77442 /* Pods-Carberry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6AK2M88EQH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Carberry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = katerinabakun.Carberry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katerinabakun.Carberry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		06FE14401DB17B0C00BCC9E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD3972907CE43B999E271586 /* Pods-CarberryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CarberryTests/Info.plist;
@@ -624,7 +534,6 @@
 		};
 		06FE14411DB17B0C00BCC9E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E2B77EC0D6DE615F3184FA3 /* Pods-CarberryTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CarberryTests/Info.plist;

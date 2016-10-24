@@ -16,7 +16,7 @@ class ConnectionView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        self.backgroundColor = UIColor.yellowColor()
+        self.backgroundColor = UIColor.yellow
         self.setupViews()
         self.setupConstrains()
         
@@ -27,15 +27,15 @@ class ConnectionView: UIView {
     func setupViews(){
         
         labelTop.text = "Coonect to server"
-        labelTop.textColor = UIColor.blackColor()
+        labelTop.textColor = UIColor.black
         self.addSubview(labelTop)
         
         connectionStateLabel.text = "PLEASE CONNECT TO SERVER"
-        connectionStateLabel.font = UIFont.systemFontOfSize(21.0)
-        connectionStateLabel.textColor = UIColor.blackColor()
+        connectionStateLabel.font = UIFont.systemFont(ofSize: 21.0)
+        connectionStateLabel.textColor = UIColor.black
         self.addSubview(connectionStateLabel)
         
-        connectionSwitch.onTintColor = UIColor.cyanColor()
+        connectionSwitch.onTintColor = UIColor.cyan
         self.addSubview(connectionSwitch)
     }
     func setupConstrains(){

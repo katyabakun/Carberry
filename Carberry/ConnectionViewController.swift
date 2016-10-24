@@ -15,14 +15,18 @@ class ConnectionViewController: BaseViewController<ConnectionView> ,UIPopoverPre
         
         
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.aView.connectionSwitch.addTarget(self, action: #selector(stateChanged), forControlEvents: UIControlEvents.ValueChanged)
+        self.aView.connectionSwitch.addTarget(self, action: #selector(stateChanged), for: UIControlEvents.valueChanged)
 
 }
-    func stateChanged(switchState: UISwitch){
-        if switchState.on {
-            self.dismissViewControllerAnimated(true, completion: nil)
+    func stateChanged(_ switchState: UISwitch){
+        if switchState.isOn {
+            self.dismiss(animated: true, completion: nil)
             
         }
     }

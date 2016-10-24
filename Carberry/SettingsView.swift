@@ -11,7 +11,7 @@ import Cartography
 class SettingsView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.purpleColor()
+        self.backgroundColor = UIColor.purple
     }
     
     required init?(coder aDecoder: NSCoder) {
