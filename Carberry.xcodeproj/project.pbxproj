@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060216551DDDE0740087810E /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060216541DDDE0740087810E /* MotionKit.swift */; };
 		060433BC1DB8E88100826ECD /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060433BB1DB8E88100826ECD /* SettingViewController.swift */; };
 		060433BF1DB8E89400826ECD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060433BE1DB8E89400826ECD /* SettingsView.swift */; };
 		060F71F11DB674D000A5B903 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71F01DB674D000A5B903 /* ActionView.swift */; };
 		060F71F31DB674E200A5B903 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71F21DB674E200A5B903 /* ActionViewController.swift */; };
 		060F71FD1DB6A10D00A5B903 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F71FC1DB6A10D00A5B903 /* Constants.swift */; };
+		0649E85D1DF87404002F6E8E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649E85C1DF87404002F6E8E /* ActionButton.swift */; };
+		0669FA281DCB7B04000649E7 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669FA271DCB7B04000649E7 /* Connection.swift */; };
+		0669FA2C1DCB813B000649E7 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0669FA2B1DCB813B000649E7 /* RxCocoa.framework */; };
+		0669FA2E1DCB8198000649E7 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0669FA2B1DCB813B000649E7 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0669FA2F1DCB8198000649E7 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0669FA291DCB8102000649E7 /* RxSwift.framework */; };
+		0669FA301DCB8198000649E7 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0669FA291DCB8102000649E7 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		068244E01DBEA7FB00C2CC32 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068244DF1DBEA7FB00C2CC32 /* Cartography.framework */; };
 		068244E11DBEA7FB00C2CC32 /* Cartography.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 068244DF1DBEA7FB00C2CC32 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0687E1141DF835830008518B /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0687E1131DF835820008518B /* Speedometer.swift */; };
 		06944C3C1DB41AB60021DCA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C3B1DB41AB60021DCA4 /* BaseViewController.swift */; };
 		06944C411DB41CB80021DCA4 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C401DB41CB80021DCA4 /* MainMenuViewController.swift */; };
 		06944C431DB41CC70021DCA4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C421DB41CC70021DCA4 /* MainMenuView.swift */; };
 		06944C471DB4265F0021DCA4 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C461DB4265F0021DCA4 /* ConnectionView.swift */; };
 		06944C491DB4269A0021DCA4 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06944C481DB4269A0021DCA4 /* ConnectionViewController.swift */; };
+		06A5E9C91DCA5880008577DC /* WowzaGoCoderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */; };
+		06A5E9CA1DCA5880008577DC /* WowzaGoCoderSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		06E60C6E1DBABB46006F342C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06E60C6D1DBABB46006F342C /* Assets.xcassets */; };
 		06FE14231DB17B0C00BCC9E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FE14221DB17B0C00BCC9E8 /* AppDelegate.swift */; };
 		06FE142D1DB17B0C00BCC9E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06FE142B1DB17B0C00BCC9E8 /* LaunchScreen.storyboard */; };
@@ -41,6 +51,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				0669FA301DCB8198000649E7 /* RxSwift.framework in Embed Frameworks */,
+				0669FA2E1DCB8198000649E7 /* RxCocoa.framework in Embed Frameworks */,
+				06A5E9CA1DCA5880008577DC /* WowzaGoCoderSDK.framework in Embed Frameworks */,
 				068244E11DBEA7FB00C2CC32 /* Cartography.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -49,17 +62,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		060216541DDDE0740087810E /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
 		060433BB1DB8E88100826ECD /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		060433BE1DB8E89400826ECD /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		060F71F01DB674D000A5B903 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = SOURCE_ROOT; };
 		060F71F21DB674E200A5B903 /* ActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		060F71FC1DB6A10D00A5B903 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0649E85C1DF87404002F6E8E /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		0669FA271DCB7B04000649E7 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		0669FA291DCB8102000649E7 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		0669FA2B1DCB813B000649E7 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		068244DF1DBEA7FB00C2CC32 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		0687E1131DF835820008518B /* Speedometer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
 		06944C3B1DB41AB60021DCA4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		06944C401DB41CB80021DCA4 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		06944C421DB41CC70021DCA4 /* MainMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		06944C461DB4265F0021DCA4 /* ConnectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
 		06944C481DB4269A0021DCA4 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WowzaGoCoderSDK.framework; sourceTree = "<group>"; };
 		06E60C6D1DBABB46006F342C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06FE141F1DB17B0C00BCC9E8 /* Carberry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carberry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06FE14221DB17B0C00BCC9E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0669FA2C1DCB813B000649E7 /* RxCocoa.framework in Frameworks */,
+				06A5E9C91DCA5880008577DC /* WowzaGoCoderSDK.framework in Frameworks */,
+				0669FA2F1DCB8198000649E7 /* RxSwift.framework in Frameworks */,
 				068244E01DBEA7FB00C2CC32 /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +189,11 @@
 		06FE14161DB17B0B00BCC9E8 = {
 			isa = PBXGroup;
 			children = (
+				060216541DDDE0740087810E /* MotionKit.swift */,
+				0669FA2B1DCB813B000649E7 /* RxCocoa.framework */,
+				06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */,
 				068244DF1DBEA7FB00C2CC32 /* Cartography.framework */,
+				0669FA291DCB8102000649E7 /* RxSwift.framework */,
 				06FE14211DB17B0C00BCC9E8 /* Carberry */,
 				06FE14201DB17B0C00BCC9E8 /* Products */,
 			);
@@ -195,6 +222,9 @@
 		06FE14421DB1815500BCC9E8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0669FA271DCB7B04000649E7 /* Connection.swift */,
+				0687E1131DF835820008518B /* Speedometer.swift */,
+				0649E85C1DF87404002F6E8E /* ActionButton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Katerina Bakunkaterinabakun";
 				TargetAttributes = {
 					06FE141E1DB17B0B00BCC9E8 = {
@@ -337,8 +367,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/WowzaGoCoderSDK.framework/strip-frameworks.sh",
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = "/usr/local/bin/carthage copy-frameworks";
@@ -357,11 +390,15 @@
 				06944C491DB4269A0021DCA4 /* ConnectionViewController.swift in Sources */,
 				06944C411DB41CB80021DCA4 /* MainMenuViewController.swift in Sources */,
 				060433BC1DB8E88100826ECD /* SettingViewController.swift in Sources */,
+				060216551DDDE0740087810E /* MotionKit.swift in Sources */,
 				06FE14231DB17B0C00BCC9E8 /* AppDelegate.swift in Sources */,
+				0669FA281DCB7B04000649E7 /* Connection.swift in Sources */,
 				06944C3C1DB41AB60021DCA4 /* BaseViewController.swift in Sources */,
 				060F71F11DB674D000A5B903 /* ActionView.swift in Sources */,
 				060F71FD1DB6A10D00A5B903 /* Constants.swift in Sources */,
 				060433BF1DB8E89400826ECD /* SettingsView.swift in Sources */,
+				0687E1141DF835830008518B /* Speedometer.swift in Sources */,
+				0649E85D1DF87404002F6E8E /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +529,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Carberry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,6 +549,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Carberry/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

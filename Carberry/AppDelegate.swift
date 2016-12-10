@@ -9,22 +9,27 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let tabBar = UITabBarController()
-        
+        let tabBar = ConnectionTabBarController()
         
         let mainVC = MainMenuViewController()
         let actionVC = ActionViewController()
         let settingsVC = SettingViewController()
-        let navMainVC = UINavigationController(rootViewController: mainVC)
-        let navActionVC = UINavigationController(rootViewController: actionVC)
-        let navSettingsVC = UINavigationController(rootViewController: settingsVC)
-        navMainVC.title = "Main"
-        let controllers = [navMainVC,navActionVC,navSettingsVC]
+        let connectionVC = ConnectionViewController()
+    
+        let navMainVC = CarberryNavController(rootViewController: mainVC)
+        let navActionVC = CarberryNavController(rootViewController: actionVC)
+        let navSettingsVC = CarberryNavController(rootViewController: settingsVC)
+        let navConVC = CarberryNavController(rootViewController: connectionVC)
+        navSettingsVC.navigationBar.isTranslucent = false
+     
+        
+        let controllers = [navConVC,navMainVC,navActionVC,navSettingsVC]
         
         tabBar.viewControllers = controllers
         window?.rootViewController = tabBar

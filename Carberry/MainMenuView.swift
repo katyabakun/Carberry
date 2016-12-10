@@ -13,57 +13,50 @@ class MainMenuView: UIView {
     lazy var rightButton = UIButton()
     lazy var speedUpButton = UIButton()
     lazy var speedDownButton = UIButton()
-    lazy var backgraundView = UIImageView()
-    lazy var speedLabel1 = UILabel()
-    lazy var speedLabel2 = UILabel()
+    
+    var speedView = Speedometer() 
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
+        
         setupViews()
         setupConstraints()
     }
     func setupViews(){
-        backgraundView.image = UIImage(named: "Wall-5")
-        backgraundView.sizeToFit()
-        backgraundView.backgroundColor = UIColor.lightGray
-        self.addSubview(backgraundView)
         
-        let imageLeft = UIImage(named: "left")
+        self.backgroundColor = AppColor.orangeDark
+        
+        self.addSubview(self.speedView)
+        
+        let imageLeft = UIImage(named: "left-arrow")
         leftButton.setImage(imageLeft, for: UIControlState())
-        leftButton.contentHorizontalAlignment = .fill
-        leftButton.contentVerticalAlignment = .fill
-        leftButton.imageView?.contentMode = .scaleAspectFit
+        leftButton.setContentMode(button: leftButton)
+        leftButton.tintColor = AppColor.darkGrey
         self.addSubview(leftButton)
         
-        rightButton.setImage(UIImage(named: "right"), for: UIControlState())
-        rightButton.contentHorizontalAlignment = .fill
-        rightButton.contentVerticalAlignment = .fill
-        rightButton.imageView?.contentMode = .scaleAspectFit
+        rightButton.setImage(UIImage(named: "right-arrow"), for: UIControlState())
+        rightButton.setContentMode(button: rightButton)
+        rightButton.tintColor  = AppColor.darkGrey
         self.addSubview(rightButton)
         
-        speedUpButton.setImage(UIImage(named: "top"), for: UIControlState())
-        speedUpButton.contentHorizontalAlignment = .fill
-        speedUpButton.contentVerticalAlignment = .fill
-        speedUpButton.imageView?.contentMode = .scaleAspectFit
+        speedUpButton.setImage(UIImage(named: "plus"), for: UIControlState())
+        speedUpButton.setContentMode(button: speedUpButton)
+        speedUpButton.tintColor = AppColor.darkGrey
         self.addSubview(speedUpButton)
         
-        speedDownButton.setImage(UIImage(named: "bottom"), for: UIControlState())
-        speedDownButton.contentHorizontalAlignment = .fill
-        speedDownButton.contentVerticalAlignment = .fill
-        speedDownButton.imageView?.contentMode = .scaleAspectFit
+        speedDownButton.setImage(UIImage(named: "minus"), for: UIControlState())
+        speedDownButton.setContentMode(button: speedDownButton)
+        speedDownButton.tintColor = AppColor.darkGrey
         self.addSubview(speedDownButton)
         
-        speedLabel1.text = "Speed:"
-        self.addSubview(speedLabel1)
         
-        self.addSubview(speedLabel2)
     }
     func setupConstraints(){
-        constrain(self.leftButton,self.rightButton,self.speedUpButton,self.speedDownButton,self.backgraundView){left_b,right_b,speedup,speeddown,backgraund in
+        constrain(self.leftButton,self.rightButton,self.speedUpButton,self.speedDownButton,self.speedView){left_b,right_b,speedup,speeddown,speedV in
             
             left_b.left == left_b.superview!.left
-            left_b.centerY == left_b.superview!.centerY
+            left_b.centerY == left_b.superview!.centerY + 110
             left_b.height == left_b.superview!.height/5
             left_b.width == left_b.height
             
@@ -71,22 +64,23 @@ class MainMenuView: UIView {
             right_b.right == right_b.superview!.right
             right_b.size == left_b.size
             
-            speedup.bottom == left_b.top
-            speedup.centerX == speedup.superview!.centerX
+            speedup.centerY == speedup.superview!.centerY - 110
+            speedup.right == speedup.superview!.right
             speedup.size == left_b.size
             
-            speeddown.top == left_b.bottom
-            speeddown.centerX == speeddown.superview!.centerX
+            speeddown.centerY == speedup.centerY
+            speeddown.left == speeddown.superview!.left
             speeddown.size == left_b.size
             
-            backgraund.center == backgraund.superview!.center
-            backgraund.size == backgraund.superview!.size
+            speedV.centerY == speedV.superview!.centerY
+            speedV.centerX == speedV.superview!.centerX
+            speedV.width == speedV.superview!.width/3.2
+            speedV.height == speedV.width
+            
         }
-        constrain(speedLabel1,speedLabel2){speed_l1,speed_l2 in
-            speed_l1.left == speed_l1.superview!.left + 20
-            speed_l1.bottom == speed_l1.superview!.bottom - 60
-        }
+
     }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

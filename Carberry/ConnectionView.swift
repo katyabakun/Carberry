@@ -10,13 +10,13 @@ import UIKit
 import Cartography
 
 class ConnectionView: UIView {
-    lazy var labelTop = UILabel()
+    lazy var testbuton = UIButton()
     lazy var connectionStateLabel = UILabel()
-    lazy var connectionSwitch = UISwitch()
+    lazy var connectionButton = UIButton()
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        self.backgroundColor = UIColor.yellow
+        self.backgroundColor = AppColor.appOrange
         self.setupViews()
         self.setupConstrains()
         
@@ -26,29 +26,47 @@ class ConnectionView: UIView {
     }
     func setupViews(){
         
-        labelTop.text = "Coonect to server"
-        labelTop.textColor = UIColor.black
-        self.addSubview(labelTop)
         
-        connectionStateLabel.text = "PLEASE CONNECT TO SERVER"
-        connectionStateLabel.font = UIFont.systemFont(ofSize: 21.0)
-        connectionStateLabel.textColor = UIColor.black
+        connectionStateLabel.text = "TO CONNECT TO SERVER PLEASE PRESS THE BUTTON ABOVE"
+        connectionStateLabel.sizeToFit()
+        connectionStateLabel.lineBreakMode = .byWordWrapping
+        connectionStateLabel.numberOfLines = 3
+        connectionStateLabel.font = UIFont.systemFont(ofSize: 19.0)
+        connectionStateLabel.textColor = AppColor.appGrey
+        connectionStateLabel.textAlignment = .center
         self.addSubview(connectionStateLabel)
         
-        connectionSwitch.onTintColor = UIColor.cyan
-        self.addSubview(connectionSwitch)
+        
+        self.connectionButton.setImage(UIImage(named: "wifi"), for: .normal)
+        connectionButton.setContentMode(button: self.connectionButton)
+        connectionButton.tintColor = AppColor.appLightGray
+        self.addSubview(connectionButton)
+        testbuton.backgroundColor = AppColor.appGrey
+        self.addSubview(testbuton)
     }
     func setupConstrains(){
+        let width = UIScreen.main.bounds.width/1.5
         
-        constrain(self.labelTop,self.connectionStateLabel,self.connectionSwitch){labeltop,connection,c_switch in
-            labeltop.centerX == labeltop.superview!.centerX
-            labeltop.top == labeltop.superview!.top + 180
+        constrain(self.connectionStateLabel,self.connectionButton){connection,c_button in
+            guard let superview = c_button.superview else{
+                return
+            }
+            c_button.centerX == superview.centerX
+            c_button.centerY == superview.centerY - 20
+            c_button.width == width
+            c_button.height == width
             
-            connection.top == labeltop.bottom + 140
-            connection.centerX == labeltop.centerX
-            
-            c_switch.top == connection.bottom+50
-            c_switch.centerX == connection.centerX
+            connection.centerX == c_button.centerX
+            connection.top == c_button.bottom + 30
+            connection.width == superview.width - 40
+        }
+        constrain(testbuton){test in
+            guard let superview = test.superview else{
+                return
+            }
+            test.centerX == superview.centerX
+            test.top == superview.top
+            test.size == superview.size/6
         }
     }
 }

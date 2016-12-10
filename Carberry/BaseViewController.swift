@@ -8,12 +8,8 @@
 
 import UIKit
 
-protocol DisplayPreferable {
-    var requiresNavBarHidden: Bool { get }
-}
+class BaseViewController<TView: UIView> : UIViewController {
 
-class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
-    //    let lifeTimeDisposeBag = DisposeBag()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -21,18 +17,14 @@ class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        //        let view = TView(frame: UIScreen.mainScreen().bounds)
-        //
-        //        self.view = view
+        
+
         print("init in BaseViewController -> \(type(of: self))")
     }
 
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    override var prefersStatusBarHidden : Bool {
-        return false
     }
     
     var aView: TView {
@@ -45,27 +37,10 @@ class BaseViewController<TView: UIView> : UIViewController, DisplayPreferable {
         self.view = view
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK: deinit
     deinit {
+        
         print("deinit in BaseViewController -> \(type(of: self))")
-    }
-    
-    // MARK: -  DisplayPreferable
-    
-    var requiresNavBarHidden: Bool {
-        get {
-            return false
-        }
     }
     
 }
