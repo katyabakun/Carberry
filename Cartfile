@@ -1,1 +1,3 @@
 github "https://github.com/robb/Cartography.git"
+github "https://github.com/ReactiveX/RxSwift.git"
+github "MHaroonBaig/MotionKit.git"

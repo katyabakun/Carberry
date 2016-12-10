@@ -88,7 +88,7 @@ import CoreMotion
     *   given NSOperationQueue will be cancelled. You can access the retrieved values either by a
     *   Trailing Closure or through a Delegate.
     */
-    open func getGyroValues (_ interval: TimeInterval = 0.1, values: ((_ x: Double, _ y: Double, _ z:Double) -> ())? ) {
+    open func getGyroValues (_ interval: TimeInterval = 0.01, values: ((_ x: Double, _ y: Double, _ z:Double) -> ())? ) {
         
         var valX: Double!
         var valY: Double!
