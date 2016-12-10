@@ -127,6 +127,18 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		0605530E1DFCC11B00742850 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				060216541DDDE0740087810E /* MotionKit.swift */,
+				0669FA2B1DCB813B000649E7 /* RxCocoa.framework */,
+				06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */,
+				068244DF1DBEA7FB00C2CC32 /* Cartography.framework */,
+				0669FA291DCB8102000649E7 /* RxSwift.framework */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 		060F71EE1DB6749500A5B903 /* Action */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,11 +201,7 @@
 		06FE14161DB17B0B00BCC9E8 = {
 			isa = PBXGroup;
 			children = (
-				060216541DDDE0740087810E /* MotionKit.swift */,
-				0669FA2B1DCB813B000649E7 /* RxCocoa.framework */,
-				06A5E9C71DCA575B008577DC /* WowzaGoCoderSDK.framework */,
-				068244DF1DBEA7FB00C2CC32 /* Cartography.framework */,
-				0669FA291DCB8102000649E7 /* RxSwift.framework */,
+				0605530E1DFCC11B00742850 /* Libraries */,
 				06FE14211DB17B0C00BCC9E8 /* Carberry */,
 				06FE14201DB17B0C00BCC9E8 /* Products */,
 			);
