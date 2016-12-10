@@ -17,17 +17,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelState: UILabel!
     var inStream2 : NSInputStream?
     var outStream2: NSOutputStream?
-
+    
     //Data received
     var buffer = [UInt8](count: 200, repeatedValue: 0)
     var data2:String?
-    var currentValue: Int?
+    @IBOutlet weak var image_adhoc_connection: UIImageView!
+    var currentValue: Int? = 123
+    
+    
+    @IBOutlet weak var labelConnectionState: UILabel!
     
     @IBAction func buttonLeft(sender: AnyObject) {
+        
     btnLeftPressed()
     }
-        @IBAction func buttonOff(sender: AnyObject) {
-        
+    @IBAction func buttonOff(sender: AnyObject) {
         btnOffPressed()
     }
     @IBAction func buttonRight(sender: AnyObject) {
@@ -47,7 +51,29 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var labelSpeed: UILabel!
    
- 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "push2"){
+        
+            var state_connection2:String?
+            var inStream_m : NSInputStream?
+            var outStream_m: NSOutputStream?
+            if( labelConnectionState.text == "ON")
+            {
+                state_connection2 = "ON"
+                inStream_m = inStream2
+                outStream_m = outStream2
+            }
+            else
+            {
+                state_connection2 = "OFF"
+            }
+            (segue.destinationViewController as! SecondViewController).outStream3 = outStream_m
+            (segue.destinationViewController as! SecondViewController).inStream3 = inStream_m
+            (segue.destinationViewController as! SecondViewController).data3 = state_connection2
+            
+        }
+
+    }
     func btnLeftPressed(){
         let data: NSData = "LEFT".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
@@ -62,11 +88,12 @@ class ViewController: UIViewController {
         let data: NSData = "ON".dataUsingEncoding(NSUTF8StringEncoding)!
        outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
         currentValue = currentValue!+3
+        labelSpeed.text = "\(currentValue)"
+        sliderSpeed.value = Float(currentValue!)
     }
     func btnOffPressed (){
         let data: NSData = "OFF".dataUsingEncoding(NSUTF8StringEncoding)!
         outStream2?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
-        currentValue = currentValue!-3
     }
     func btnAddPressed(){
         let data: NSData = "ADD".dataUsingEncoding(NSUTF8StringEncoding)!
@@ -82,10 +109,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        if let label = data2{
+        /*if let label = data2{
         labelState.text = data2
         
+        }*/
+        let label = data2
+        if (label == "ON")
+        {
+            labelConnectionState.text = "ON"
+        image_adhoc_connection.image = UIImage(named: "adhoc_id.png")
+            
         }
+        else
+        {
+            labelConnectionState.text = "OFF"
+        image_adhoc_connection.image = UIImage(named:"no_signal.png")
+                    }
     }
 
     override func didReceiveMemoryWarning() {
